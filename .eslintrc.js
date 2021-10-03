@@ -40,5 +40,6 @@ module.exports = {
         js: 'never',
       },
     ],
+    'no-var-requires': true,
   },
 };
