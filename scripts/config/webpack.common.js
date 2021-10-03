@@ -37,10 +37,19 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    index: path.resolve(SRC_PATH, './index.js'),
+    index: path.resolve(SRC_PATH, './index.tsx'),
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json'],
   },
   module: {
     rules: [
+      {
+        test: /\.(tsx?|js)$/,
+        loader: 'babel-loader',
+        options: { cacheDirectory: true },
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
         use: getCssLoaders(1),
