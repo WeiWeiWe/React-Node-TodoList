@@ -4,6 +4,7 @@ const { isDevelopment } = require('../env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
@@ -129,6 +130,11 @@ module.exports = {
     }),
     new WebpackBar({
       name: isDevelopment ? 'RUNNING' : 'BUNDLING',
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configFile: path.resolve(PROJECT_PATH, './tsconfig.json'),
+      },
     }),
   ],
 };
