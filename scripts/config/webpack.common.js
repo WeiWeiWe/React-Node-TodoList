@@ -1,7 +1,8 @@
 const path = require('path');
-const { SRC_PATH } = require('../paths');
+const { SRC_PATH, PROJECT_PATH } = require('../paths');
 const { isDevelopment } = require('../env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
@@ -107,8 +108,23 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../../public/index.html'),
+      template: path.resolve(PROJECT_PATH, './public/index.html'),
       filename: 'index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          context: path.resolve(PROJECT_PATH, './public'),
+          from: '*',
+          to: path.resolve(PROJECT_PATH, './dist'),
+          toType: 'dir',
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
     }),
   ],
 };
