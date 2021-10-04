@@ -3,6 +3,7 @@ const { SRC_PATH, PROJECT_PATH } = require('../paths');
 const { isDevelopment } = require('../env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackBar = require('webpackbar');
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
@@ -125,6 +126,9 @@ module.exports = {
           },
         },
       ],
+    }),
+    new WebpackBar({
+      name: isDevelopment ? 'RUNNING' : 'BUNDLING',
     }),
   ],
 };
