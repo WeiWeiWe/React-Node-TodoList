@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface IProps {
+export interface AppIProps {
   test: string;
 }
 
-function App(props: IProps) {
+function App(props: AppIProps) {
   const { test } = props;
   return (
     <div className="App">
