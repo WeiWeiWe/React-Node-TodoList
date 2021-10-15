@@ -3,7 +3,9 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/src/setUpTests.ts'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '.+\\.(css|styl|less|sass|scss)$': 'jest-transform-css',
+  },
+  moduleNameMapper: {
+    '^.+\\.(css|sass|scss|less)$': 'identity-obj-proxy',
   },
   testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'],
   testEnvironment: 'jsdom',
