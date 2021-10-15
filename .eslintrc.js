@@ -44,7 +44,7 @@ module.exports = {
         js: 'never',
       },
     ],
-
+    'import/order': OFF,
     'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
     'unicorn/prevent-abbreviations': OFF,
     'unicorn/filename-case': [
