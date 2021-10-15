@@ -1,14 +1,14 @@
 import React from 'react';
+import './App.css';
 
-export interface AppIProps {
-  test: string;
-}
-
-function App(props: AppIProps) {
-  const { test } = props;
+function App() {
   return (
     <div className="App">
-      <span>{test}</span>
+      <header className="App-header">
+        <h1 className="App-title" data-testid="App-title">
+          React + TypeScript + Jest 開發腳手架
+        </h1>
+      </header>
     </div>
   );
 }
