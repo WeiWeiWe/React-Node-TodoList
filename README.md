@@ -1,6 +1,7 @@
 # Webpack5-React-TypeScript-Jest-Template
 
-* 使用 Webpack5 自行從零搭建 React + TS + Jest 項目環境，並用來開發一個 [TODO LIST](https://github.com/WeiWeiWe/react-ts-jest-todolist) 項目，這裡主要說明項目環境，關於 TODO LIST 項目說明，請點擊連結。
+* 使用 Webpack5 自行從零搭建 React + TS + Jest 項目環境，並用來開發一個 TODO LIST 項目。
+* 這裡主要說明 Webpack5 項目環境，有關 TODO LIST 項目說明，可以點擊 [TODO LIST 項目說明](https://github.com/WeiWeiWe/react-ts-jest-todolist)。
 
 ## 功能
 * 支持 Webpack + Babel 基本環境搭建
